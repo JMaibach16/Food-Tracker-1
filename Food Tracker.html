@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Food Tracker</title>
+</head>
+
+<body>
+    <h2>Food Tracker</h2>
+    <div><label>Name: <input id="Name" type="text"/></label></div>
+    <div><label>Typ: <select id="Typ" name="">
+        <option value="Mahlzeit">Mahlzeit</option>
+        <option value="Junkfood">Junkfood</option>
+    </select></label></div>    
+    <div><label>Menge: <input id="Menge" type="number"/></label></div>
+    
+    <button onClick="Trackfunktion()">Tracken</button>
+    <div id="Logbook">...</div>
+    
+<script>
+    function Trackfunktion() {
+        document.querySelector("#Logbook").innerHTML =
+            document.querySelector("#Logbook").innerHTML + "<p>" + new Date().toLocaleString() + ", "
+            + document.querySelector("#Name").value + ", " + document.querySelector("#Typ").value + ", " + document.querySelector("#Menge").value + "</p>";
+    }
+</script>
+    
+</body>
+</html>
